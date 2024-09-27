@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPMCS", "TPDAALCS\TPMCS.csproj", "{0AED02DF-1756-4BA0-B442-18B01280FC73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPDACH", "TPDACH\TPDACH.csproj", "{D816EB3F-B037-451B-B609-F11B27676718}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AED02DF-1756-4BA0-B442-18B01280FC73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AED02DF-1756-4BA0-B442-18B01280FC73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AED02DF-1756-4BA0-B442-18B01280FC73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AED02DF-1756-4BA0-B442-18B01280FC73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D816EB3F-B037-451B-B609-F11B27676718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D816EB3F-B037-451B-B609-F11B27676718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D816EB3F-B037-451B-B609-F11B27676718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D816EB3F-B037-451B-B609-F11B27676718}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {340952E6-A1A2-463D-8C83-75A0F54BB08C}
+	EndGlobalSection
+EndGlobal
