@@ -1,6 +1,6 @@
 ﻿using ProtoBuf;
 
-namespace TPDACH.Services.ProtoBufs;
+namespace TPDRS.Services.ProtoBufs;
 
 [ProtoContract]
 internal class UdpProto

@@ -2,9 +2,9 @@
 using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Sockets;
-using TPDACH.Services.ProtoBufs;
+using TPDRS.Services.ProtoBufs;
 
-namespace TPDACH.Services;
+namespace TPDRS.Services;
 
 public class NetworkService
 {
@@ -27,7 +27,7 @@ public class NetworkService
         this.ServerAddress = new IPEndPoint(IPAddress.Any, (int)port);
         this.ControlServer = new TcpListener(this.ServerAddress);
         this.LiveDataServer = new UdpClient(this.ServerAddress);
-        
+
         this.ControlThread = new Thread(RunControlServer)
         {
             IsBackground = true,
@@ -35,7 +35,7 @@ public class NetworkService
             Priority = ThreadPriority.Highest
         };
 
-        this.LiveDataThread = new Thread(RunLiveDataServer) 
+        this.LiveDataThread = new Thread(RunLiveDataServer)
         {
             IsBackground = false,
             Name = "LiveDataServer",

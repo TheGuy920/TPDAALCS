@@ -1,6 +1,6 @@
-﻿using TPDACH.Services;
+﻿using TPDRS.Services;
 
-namespace TPDACH;
+namespace TPDRS;
 
 /// <summary>
 /// Main entry class to initialize the data agregation and control hub

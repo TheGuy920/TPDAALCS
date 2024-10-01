@@ -20,5 +20,46 @@ namespace TPDAALCS
         {
             InitializeComponent();
         }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+            => this.WindowState = WindowState.Minimized;
+
+        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
+            => this.WindowState = this.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+            => this.Close();
+
+        private Point? GrapplePoint = null;
+
+        private void DockPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton != MouseButton.Left)
+                return;
+
+            this.GrapplePoint = e.GetPosition(this);
+            e.Handled = true;
+        }
+
+        private void Window_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton != MouseButton.Left)
+                return;
+
+            this.GrapplePoint = null;
+        }
+
+        private void Window_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (GrapplePoint is null)
+                return;
+
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                Point p = e.GetPosition(this);
+                this.Left += p.X - GrapplePoint.Value.X;
+                this.Top += p.Y - GrapplePoint.Value.Y;
+            }
+        }
     }
 }
