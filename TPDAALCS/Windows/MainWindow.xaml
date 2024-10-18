@@ -21,7 +21,6 @@
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Foreground" Value="GhostWhite" />
             <Setter Property="FontSize" Value="16" />
-            <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="Margin" Value="0" />
             <Setter Property="Template">
                 <Setter.Value>
@@ -54,27 +53,48 @@
                 Height="30"
                 HorizontalAlignment="Right"
                 Click="CloseButton_Click"
-                Content="X"
                 DockPanel.Dock="Right"
-                Style="{StaticResource ResourceKey=WindowStateButton}" />
+                FontWeight="Medium"
+                Style="{StaticResource ResourceKey=WindowStateButton}">
+                <TextBlock
+                    Margin="0"
+                    Padding="0,0,0,8"
+                    VerticalAlignment="Center"
+                    FontSize="22"
+                    Text="x"
+                    TextAlignment="Center" />
+            </Button>
             <Button
                 x:Name="MaximizeButton"
                 Width="30"
                 Height="30"
                 HorizontalAlignment="Right"
                 Click="MaximizeButton_Click"
-                Content="▢"
                 DockPanel.Dock="Right"
-                Style="{StaticResource ResourceKey=WindowStateButton}" />
+                Style="{StaticResource ResourceKey=WindowStateButton}">
+                <TextBlock
+                    Margin="0"
+                    Padding="0,0,0,2.5"
+                    VerticalAlignment="Center"
+                    Text="▢"
+                    TextAlignment="Center" />
+            </Button>
             <Button
                 x:Name="MinimizeButton"
                 Width="30"
                 Height="30"
                 HorizontalAlignment="Right"
                 Click="MinimizeButton_Click"
-                Content="_"
                 DockPanel.Dock="Right"
-                Style="{StaticResource ResourceKey=WindowStateButton}" />
+                Style="{StaticResource ResourceKey=WindowStateButton}">
+                <TextBlock
+                    Margin="0"
+                    Padding="0,0,0,23.5"
+                    VerticalAlignment="Center"
+                    FontSize="22"
+                    Text="_"
+                    TextAlignment="Center" />
+            </Button>
             <TextBlock
                 x:Name="TitleLine"
                 Margin="10,0"
@@ -84,6 +104,9 @@
                 Foreground="GhostWhite"
                 Text="Torido Project Data Acquisition, Analysis, and Launch Control System" />
         </DockPanel>
-        <Grid Grid.Row="1" />
+        <Frame
+            x:Name="PageDisplay"
+            Grid.Row="1"
+            NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>
