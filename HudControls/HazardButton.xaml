@@ -1,0 +1,255 @@
+﻿<UserControl
+    x:Class="HudControls.HazardButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:HudControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="150"
+    d:DesignWidth="200"
+    mc:Ignorable="d">
+    <Grid>
+        <Border Grid.RowSpan="6" Grid.ColumnSpan="6">
+            <Border.Background>
+                <LinearGradientBrush MappingMode="Absolute" SpreadMethod="Repeat" StartPoint="20,20" EndPoint="0,0">
+                    <GradientStop Offset="0" Color="Yellow" />
+                    <GradientStop Offset="0.5" Color="Yellow" />
+                    <GradientStop Offset="0.5" Color="Black" />
+                    <GradientStop Offset="1" Color="Black" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="35*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.35*" />
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="0.35*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.75*" />
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="0.75*" />
+                </Grid.RowDefinitions>
+                <Grid
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Background="#FF960000" />
+                <Grid
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Background="#FF4E0000" />
+                <Grid
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    ClipToBounds="True">
+
+                    <Path
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Data="M 0,0 L 1,0 L 0,1 Z"
+                        Fill="#FF960000"
+                        RenderTransformOrigin="0.5,0.5"
+                        Stretch="Fill" />
+                    <Path
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Data="M 1,1 L 1,0 L 0,1 Z"
+                        Fill="#FF4E0000"
+                        RenderTransformOrigin="0.5,0.5"
+                        Stretch="Fill" />
+                    <Path
+                        Margin="-1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Opacity="0.9"
+                        RenderTransformOrigin="0.5,0.5"
+                        Stretch="Fill"
+                        Stroke="Black"
+                        StrokeThickness="1">
+                        <Path.Data>
+                            <GeometryGroup>
+                                <LineGeometry StartPoint="1,0" EndPoint="0,1" />
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                </Grid>
+                <Grid
+                    x:Name="TopLeftCorner"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    ClipToBounds="False">
+                    <Path
+                        Margin="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Data="M 1,1 L 1,0 L 0,1 Z"
+                        Fill="Black"
+                        RenderTransformOrigin="0.5,0.5"
+                        Stretch="Fill" />
+                    <Path
+                        Margin="0,1,0,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Data="M 1,1 L 1,0 L 0,1 Z"
+                        Fill="#FF960000"
+                        RenderTransformOrigin="0.5,0.5"
+                        Stretch="Fill" />
+                </Grid>
+                <Grid
+                    x:Name="BottomRightCorner"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    ClipToBounds="True">
+                    <Path
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Data="M 0,0 L 1,0 L 0,1 Z"
+                        Fill="Black"
+                        RenderTransformOrigin="0.5,0.5"
+                        Stretch="Fill" />
+                    <Path
+                        Margin="0,0,1,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Data="M 0,0 L 1,0 L 0,1 Z"
+                        Fill="#FF4E0000"
+                        RenderTransformOrigin="0.5,0.5"
+                        Stretch="Fill" />
+                </Grid>
+                <Grid
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    MouseDown="Grid_MouseDown"
+                    MouseLeave="Grid_MouseLeave"
+                    MouseUp="Grid_MouseUp">
+                    <Grid.RenderTransform>
+                        <TranslateTransform x:Name="GridTranslateTransform" />
+                    </Grid.RenderTransform>
+                    <Grid Background="Red" />
+                    <Border
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Opacity="0.9" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Viewbox Grid.Row="1" Grid.Column="1">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontFamily="Impact"
+                                Foreground="White"
+                                Text="LAUNCH"
+                                TextAlignment="Center"
+                                TextWrapping="WrapWithOverflow" />
+                        </Viewbox>
+                    </Grid>
+                    <Rectangle
+                        x:Name="RGlow"
+                        Fill="Gold"
+                        Opacity="0.5"
+                        Visibility="Hidden">
+                        <Rectangle.Effect>
+                            <BlurEffect Radius="50" />
+                        </Rectangle.Effect>
+                    </Rectangle>
+                </Grid>
+                <Grid
+                    x:Name="GBackground"
+                    Grid.RowSpan="3"
+                    Grid.ColumnSpan="3"
+                    IsHitTestVisible="False"
+                    Opacity="0.5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.35*" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="0.35*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.75*" />
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="0.75*" />
+                    </Grid.RowDefinitions>
+                    <Grid
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Background="Black" />
+                    <Grid
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Background="Black" />
+                    <Grid
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        ClipToBounds="True">
+                        <Path
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Data="M 0,0 L 1,0 L 0,1 Z"
+                            Fill="Black"
+                            RenderTransformOrigin="0.5,0.5"
+                            Stretch="Fill" />
+                        <Path
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Data="M 1,1 L 1,0 L 0,1 Z"
+                            Fill="Black"
+                            RenderTransformOrigin="0.5,0.5"
+                            Stretch="Fill" />
+                    </Grid>
+                    <Grid
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        ClipToBounds="True">
+                        <Path
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Data="M 1,1 L 1,0 L 0,1 Z"
+                            Fill="Black"
+                            RenderTransformOrigin="0.5,0.5"
+                            Stretch="Fill" />
+                    </Grid>
+                    <Grid
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        ClipToBounds="True">
+                        <Path
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Data="M 0,0 L 1,0 L 0,1 Z"
+                            Fill="Black"
+                            RenderTransformOrigin="0.5,0.5"
+                            Stretch="Fill" />
+                    </Grid>
+                    <Grid
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Background="Black" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\circular_control_bg.png" />
+    <None Remove="Assets\control_bg_nocolor.png" />
+    <None Remove="Assets\corner_decor.png" />
+    <None Remove="Assets\met_text_0.jpg" />
+    <None Remove="Assets\met_text_00.jpg" />
+    <None Remove="Assets\met_text_1.jpg" />
+    <None Remove="Assets\met_text_2.jpg" />
+    <None Remove="Assets\met_text_3.jpg" />
+    <None Remove="Assets\met_text_4.jpg" />
+    <None Remove="Assets\met_text_5.jpg" />
+    <None Remove="Assets\screw_top.png" />
+    <None Remove="Assets\screw_top_0.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\met_text_5.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\met_text_0.jpg" />
+    <Resource Include="Assets\met_text_00.jpg" />
+    <Resource Include="Assets\met_text_1.jpg" />
+    <Resource Include="Assets\met_text_2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HudControls\HudControls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\circular_control_bg.png" />
+    <Resource Include="Assets\control_bg_nocolor.png" />
+    <Resource Include="Assets\corner_decor.png" />
+    <Resource Include="Assets\met_text_3.jpg" />
+    <Resource Include="Assets\met_text_4.jpg" />
+    <Resource Include="Assets\screw_top.png" />
+    <Resource Include="Assets\screw_top_0.png" />
+  </ItemGroup>
+
+</Project>

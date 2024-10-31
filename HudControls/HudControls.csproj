@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\flip_down.png" />
+    <None Remove="Assets\flip_none.png" />
+    <None Remove="Assets\flip_up.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\flip_down.png" />
+    <Resource Include="Assets\flip_none.png" />
+    <Resource Include="Assets\flip_up.png" />
+  </ItemGroup>
+
+</Project>

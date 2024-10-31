@@ -1,0 +1,37 @@
+﻿<UserControl
+    x:Class="HudControls.LedIndicator"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:HudControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="25"
+    Height="25"
+    d:DesignHeight="50"
+    d:DesignWidth="50"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <local:LedColorToBrushConverter x:Key="LedColorToBrushConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <Ellipse
+            Fill="Black"
+            Stroke="Gray"
+            StrokeThickness="2" />
+        <Ellipse
+            x:Name="Led"
+            Margin="4"
+            Fill="{Binding State, Converter={StaticResource LedColorToBrushConverter}}" />
+        <Ellipse Fill="{Binding State, Converter={StaticResource LedColorToBrushConverter}}" Opacity="0.25">
+            <Ellipse.Effect>
+                <BlurEffect Radius="20" />
+            </Ellipse.Effect>
+        </Ellipse>
+        <Grid.Effect>
+            <DropShadowEffect
+                BlurRadius="5"
+                Direction="270"
+                ShadowDepth="2" />
+        </Grid.Effect>
+    </Grid>
+</UserControl>
